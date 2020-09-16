@@ -137,13 +137,12 @@ def plot_box(pd, pos, quat, size):
 
 
 class Projection:
-    def __init__(self, f_, J_, tol_=1e-5, max_iter_=200, step_size_=1.0, use_sign_=False):
+    def __init__(self, f_, J_, tol_=1e-5, max_iter_=200, step_size_=1.0):
         self.f = f_
         self.J = J_
         self.tol = tol_
         self.max_iter = max_iter_
         self.step_size = step_size_
-        self.use_sign = use_sign_
 
     def project(self, q):
         y = self.f(q)
@@ -151,11 +150,7 @@ class Projection:
         iter = 0
         while np.linalg.norm(y) > self.tol and iter < self.max_iter and np.linalg.norm(y) < y0:
             J = self.J(q)
-            if self.use_sign:
-                q = q - self.step_size * np.sign(np.linalg.pinv(J)) @ y
-            else:
-                q = q - self.step_size * np.linalg.pinv(J) @ y
-
+            q = q - self.step_size * np.linalg.lstsq(J, y, rcond=-1)[0]
             y = self.f(q)
 
             iter += 1
