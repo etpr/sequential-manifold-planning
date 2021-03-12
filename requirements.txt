@@ -1,7 +1,0 @@
-numpy
-plotly
-scipy
-configparser
-setuptools
-matplotlib
-sklearn
