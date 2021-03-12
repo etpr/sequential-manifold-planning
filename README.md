@@ -1,5 +1,8 @@
-# planning-on-sequenced-manifolds
+# sequential-manifold-planning
 Code of the 'Planning on Sequenced Manifolds' (PSM) algorithm proposed in https://arxiv.org/abs/2006.02027
+
+![alt text](http://www.peter-englert.net/graphics/hourglass.png?raw=true)
+
 
 ## Usage
 Install required python packages 
