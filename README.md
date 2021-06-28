@@ -1,5 +1,5 @@
 # sequential-manifold-planning
-Code of the 'Planning on Sequenced Manifolds' (PSM) algorithm proposed in https://arxiv.org/abs/2006.02027
+Supplemental code of the Planning on Sequenced Manifolds (PSM*) algorithm proposed in http://www.roboticsproceedings.org/rss17/p039.html
 
 ![alt text](http://www.peter-englert.net/graphics/hourglass.png?raw=true)
 
